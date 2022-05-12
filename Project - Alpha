@@ -1,0 +1,108 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+<title>clientForm</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.form {
+  border-radius: 25px;
+  background-color: rgb(137,200,46);
+  width: 250px;
+  border: 5px;
+  border-style: solid;
+  border-color: rgb(60,60,59);
+  padding: 18px;
+  margin: auto;
+  font-family: "Calibri";
+  display: inline-block;
+}
+
+.button {
+  text-align: center;
+  color: rgb(60,60,59);
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type=text], input[type=email] {
+  width:80%;
+  font-family: "Calibri";
+  text-align: left;
+  float: right;
+  margin-bottom: 4px;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: rgb(231,0,100);
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: rgb(60,60,59);
+  font-family: "Calibri";
+  color: rgb(60,60,59);
+  text-align: center; 
+  margin-left: -15;
+}
+
+label {
+  width: 5%;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  float: left;
+  clear: left;
+  font-family: "Calibri";
+  color: rgb(60,60,59);
+  font-size: 15px;
+}
+
+form { 
+  margin-bottom: -8; 
+  display: inline-block;
+}
+
+body {
+  text-align: center;
+}
+
+</style>
+<script>
+function verify(){
+                   var value = document.forms[0].item.value; // or replace document.forms[0].item by document.getElementById('card')
+                   var objective = "card";
+                   if(objective != value){
+                       document.forms[0].item.style.color="#FF3300";
+                       return false;
+                   } else {
+                       document.forms[0].item.style.color="lightgreen";
+                   }
+                   return true;
+               }
+</script>
+</head>
+<body>
+
+<div class="form">
+  <form name="cForm" action="test@dn-uk.com" target="_blank" onsubmit="return validateForm()" method="post">
+    <div class="center">  
+      <label for="fname">Name:</label>
+      <input type="text" id="fname" name="fname" required placeholder="Enter Your Name"><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required 
+      placeholder="Enter Your Email"><br>
+      <label for"card">Card:</label>
+      <input type="text" id="card" name="card" required 
+      placeholder="Enter a Credit Card Number"><br>
+    </div>
+    <div class="button">
+      <input type="submit" value="Submit"><br>
+    </div>
+  </form>
+</div>
+
+</body>
+
+</html>
